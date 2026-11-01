@@ -1,9 +1,9 @@
 {
   "name": "communication-tools",
-  "description": "Skills for writing, rewriting, and formatting messages in a clear, human voice",
+  "description": "Skills for writing, rewriting, and formatting messages in a clear, human voice, and for coaching you to write them yourself",
   "version": "0.1.0",
   "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
   "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/communication-tools",
   "repository": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills",
-  "keywords": ["skills", "writing", "communication"]
+  "keywords": ["skills", "writing", "communication", "coaching"]
 }

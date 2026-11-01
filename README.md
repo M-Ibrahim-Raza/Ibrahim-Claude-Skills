@@ -73,12 +73,13 @@ behavior.
 
 ### [`communication-tools`](plugins/communication-tools/)
 
-Skills for writing, rewriting, and formatting messages in a clear, human voice.
+Skills for writing, rewriting, and formatting messages in a clear, human voice, and for coaching you to write them yourself.
 
 | Skill | What it does |
 |---|---|
 | `/write-naturally` | Rewrites or drafts content so it sounds simple, clear, and natural — not robotic or AI-generated. |
 | `/rewrite-for-slack` | Rewrites a message into a short, simple, casual Slack tone, then runs it through `/format-slack-message`. |
+| `/message-clarity-coach` | Coaches you to improve your own message — quotes the exact problem, explains why it matters, and shows a direction — without rewriting it for you. |
 | `/format-slack-message` | Formats a given message for Slack — bolds key terms, backticks code-like tokens, linkifies bare URLs — without changing a single word. |
 | `/format-clickup-message` | Formats a given message for ClickUp — bolds key terms and backticks code-like tokens and named message types — without changing a single word. |
 

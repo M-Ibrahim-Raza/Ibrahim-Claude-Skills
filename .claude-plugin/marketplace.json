@@ -29,7 +29,7 @@
     },
     {
       "name": "communication-tools",
-      "description": "Skills for writing, rewriting, and formatting messages in a clear, human voice",
+      "description": "Skills for writing, rewriting, and formatting messages in a clear, human voice, and for coaching you to write them yourself",
       "version": "0.1.0",
       "source": "./plugins/communication-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
