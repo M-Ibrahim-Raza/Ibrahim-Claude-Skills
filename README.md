@@ -1,4 +1,4 @@
-# sdd-toolkit
+# Ibrahim-Claude-Skills
 
 A Claude Code plugin marketplace. Each plugin lives in its own folder under [`plugins/`](plugins/),
 with its own `.claude-plugin/plugin.json`, so more plugins can be added here over time without
@@ -9,7 +9,7 @@ touching the ones already installed from this marketplace.
 One-time step, then install any plugin listed below:
 
 ```
-/plugin marketplace add M-Ibrahim-Raza/sdd-toolkit
+/plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
 ```
 
 ## Plugins
@@ -39,7 +39,7 @@ Each phase is slash-command-only (no automatic triggering), so it only runs when
 #### Install
 
 ```
-/plugin install sdd-toolkit@sdd-toolkit
+/plugin install sdd-toolkit@ibrahim-claude-skills
 ```
 
 ### [`update-app-docs`](plugins/update-app-docs/)
@@ -51,7 +51,7 @@ only — it never changes code, opens tickets, or commits.
 #### Install
 
 ```
-/plugin install update-app-docs@sdd-toolkit
+/plugin install update-app-docs@ibrahim-claude-skills
 ```
 
 ## License

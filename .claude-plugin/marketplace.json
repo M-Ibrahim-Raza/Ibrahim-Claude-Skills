@@ -1,5 +1,5 @@
 {
-  "name": "sdd-toolkit",
+  "name": "ibrahim-claude-skills",
   "description": "Claude Code plugin marketplace by M-Ibrahim-Raza",
   "owner": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
   "plugins": [
@@ -9,7 +9,7 @@
       "version": "0.1.0",
       "source": "./plugins/sdd-toolkit",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
-      "homepage": "https://github.com/M-Ibrahim-Raza/sdd-toolkit/tree/main/plugins/sdd-toolkit"
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/sdd-toolkit"
     },
     {
       "name": "update-app-docs",
@@ -17,7 +17,7 @@
       "version": "0.1.0",
       "source": "./plugins/update-app-docs",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
-      "homepage": "https://github.com/M-Ibrahim-Raza/sdd-toolkit/tree/main/plugins/update-app-docs"
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/update-app-docs"
     }
   ]
 }
