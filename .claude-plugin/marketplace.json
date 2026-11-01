@@ -1,0 +1,14 @@
+{
+  "name": "sdd-toolkit",
+  "description": "Spec-driven development workflow for Claude Code",
+  "owner": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+  "plugins": [
+    {
+      "name": "sdd-toolkit",
+      "description": "Spec-driven development workflow (specify/plan/tasks/implement) skills for Claude Code",
+      "version": "0.1.0",
+      "source": "./",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" }
+    }
+  ]
+}
