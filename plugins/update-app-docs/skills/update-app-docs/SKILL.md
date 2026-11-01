@@ -82,7 +82,8 @@ If nothing owns the feature, propose a kebab-case filename in `docs/` and ask be
 
 ## House style
 
-Every doc follows this shape. Leave out the sections that don't apply.
+Every doc follows this shape. Leave out slots that don't apply. Section names are **generated per
+doc** from the rules below, not picked off a fixed list of literal strings.
 
 ````markdown
 # Feature Name
@@ -99,6 +100,10 @@ For <related topic> see [other-doc.md](./other-doc.md).
 
 <what the feature is for>
 
+## <Mechanism Name>
+
+<how it actually works — one or more of these, freely named>
+
 ## DB Schema
 
 <schema file path>
@@ -111,9 +116,9 @@ For <related topic> see [other-doc.md](./other-doc.md).
 
 - app/<route>/page.tsx
 
-## Server Actions / API
+## <Backend transport> / Backend
 
-File: app/<route>/actions.ts
+File: app/<route>/<file>
 
 - <actionName>
 
@@ -125,18 +130,32 @@ File: app/<route>/actions.ts
 - `# Title Case Name` then a bare `---` on the **next line, no blank line between**. This is the
   signature of the set.
 - Then a one-paragraph definition, then a short bullet list of orienting facts.
-- Then an **unheaded cross-link paragraph** — "For the related rules see
-  [other-feature.md](./other-feature.md)." It sits after the bullets and before the first
-  `##`. There is no `## Related docs` section.
-- Only `##` and `###`. Never `####`.
-- `## Why We Need It` / `## Why We Need Them` on feature docs.
-- Toggles spell out both branches: `### \`fieldName\` is False` then `### \`fieldName\` is True`.
-- Tail sections where they apply, in this order: `## DB Schema`, `## UI / Frontend`,
-  `## Server Actions / API`, `## Implementation`.
+
+### Slots and how to name them
+
+Slots appear in this order when present. Rationale is always first; Data model, Interface, Backend
+and Implementation are always last, in that order.
+
+| Slot | When it appears | Heading rule |
+|---|---|---|
+| Rationale | Always | `## Why We Need It` if the feature name is singular, `## Why We Need Them` if plural. Judge this from the feature's own name, not from a fixed choice. |
+| Branch | Once per field or flag whose value changes behaviour | Group heading names the field: `## \`fieldName\` Behavior`. Under it, one `### \`fieldName\` is <value>` per value the field actually takes — not limited to two, not limited to booleans. Two independent flags in one doc get two separate group headings. |
+| Mechanism | One or more, whenever the doc needs to explain how something actually works beyond the rationale | Name each after the thing it describes, Title Case, 1-4 words (`## Ingestion`, `## Reply Classification`, `## Skip Rules`) — never a generic placeholder like `## Details` or `## Notes`. Order them the way a reader needs them, not alphabetically. A doc can have as many of these as it needs, or none. |
+| Data model | The feature touches the DB | `## DB Schema` if this doc is the only one describing that model's lifecycle; `## Shared DB Schema` if other docs also depend on the same model. |
+| Interface | The feature has UI | `## UI / Frontend` — fixed, doesn't vary. |
+| Backend | The feature is called from the frontend or another service | `## <Transport> / Backend`, where `<Transport>` names whatever call style this project actually uses — e.g. `Server Actions`, `tRPC Routes`, `API`, `REST Endpoints`. Check the code; a project that mixes transports can use a different name per doc. |
+| Implementation | Always, last | `## Implementation` — fixed. Group its file list under plain bold labels while there are only a couple; once a doc has more than one such group, promote each label to a real `###` sub-heading (named after the group) instead of bold text, so it's independently addressable. |
+
+A doc that's an index (mirrors `docs/README.md`'s own table — a hub doc for a feature area) or a
+status report for a non-engineering audience is a different genre. Don't force this skeleton onto it
+— keep its headings freeform or numbered as fits its audience, and don't treat the slot table above
+as a checklist for it.
+
 - `## DB Schema` is either a fenced block with **no language tag** holding the raw schema model, or
   the schema path plus line range — `<schema file>:120-158`.
-- `## Implementation` is bare repo-relative paths, optionally grouped under plain labels, optionally
-  closing with a `Utils:` list of bare identifier names.
+- `## Implementation` is bare repo-relative paths, optionally grouped under plain labels or `###`
+  sub-headings (see the Implementation slot above), optionally closing with a `Utils:` list of bare
+  identifier names.
 - Tables use the compact `|---|---|` separator. No alignment colons, no padding.
 - Callouts are `> **Label.** text`, used sparingly.
 - Links to siblings are `./file.md` with the filename as the visible text; `../folder/file.md` across
