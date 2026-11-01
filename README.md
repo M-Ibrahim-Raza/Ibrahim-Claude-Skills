@@ -106,6 +106,20 @@ Skills for git workflow tasks.
 /plugin install git-tools@ibrahim-claude-skills
 ```
 
+### [`prompt-tools`](plugins/prompt-tools/)
+
+Skills for editing and maintaining LLM prompts without breaking their existing instructions.
+
+| Skill | What it does |
+|---|---|
+| `/prompt-instruction-editor` | Adds, clarifies, or changes only the instructions a change request touches, leaves every other line untouched, and shows a diff to prove it. Flags conflicts with existing rules instead of quietly editing them. |
+
+#### Install
+
+```
+/plugin install prompt-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.

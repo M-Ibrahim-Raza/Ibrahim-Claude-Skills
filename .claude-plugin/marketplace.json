@@ -42,6 +42,14 @@
       "source": "./plugins/git-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/git-tools"
+    },
+    {
+      "name": "prompt-tools",
+      "description": "Skills for editing and maintaining LLM prompts without breaking their existing instructions",
+      "version": "0.1.0",
+      "source": "./plugins/prompt-tools",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/prompt-tools"
     }
   ]
 }
