@@ -5,7 +5,7 @@ description: Manual-only. Use ONLY when the user explicitly invokes /place-conte
 
 # Place Content
 
-Take a point or piece of content already given to you and place it in the single most suitable **existing** note. Never create a new file — if nothing existing fits, say so and stop instead of inventing a home for it. Creating a new note is `search-and-add-concept`'s job, not this one.
+Take a point or piece of content already given to you and place it in the single most suitable **existing** note. Never create a new file — if nothing existing fits, say so and stop instead of inventing a home for it. Creating a new note required user's.
 
 Never use em dashes (—). Use a comma, period, or rephrase instead. This applies to all output: chat explanations and note content.
 
