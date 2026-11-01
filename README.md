@@ -54,6 +54,23 @@ only — it never changes code, opens tickets, or commits.
 /plugin install update-app-docs@ibrahim-claude-skills
 ```
 
+### [`obsidian-notes`](plugins/obsidian-notes/)
+
+Skills for maintaining an Obsidian vault, built around Mermaid diagrams and Obsidian's wikilink
+behavior.
+
+| Skill | What it does |
+|---|---|
+| `/add-diagram` | Adds one Mermaid diagram to a note in a single turn, picking a relationship map or a process flow based on what the note actually says, and wires it so Obsidian's links render correctly. |
+| `/place-content` | Places a given point into the single most suitable **existing** note. Never creates a new file — says so and stops if nothing fits. |
+| `/search-and-add-concept` | Two turns: search the web and explain a concept in chat, then (on request) add the refined content to the best note, creating a new one if needed. |
+
+#### Install
+
+```
+/plugin install obsidian-notes@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.
