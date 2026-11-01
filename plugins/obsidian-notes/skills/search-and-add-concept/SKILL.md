@@ -33,9 +33,18 @@ End with one line: `Send the refined content and the note to add it to.`
 Trigger: the user sends content, or says "add this" / "add to notes" — in this turn or in the original invocation.
 
 1. Use the user's refined content as the source of truth. Do not re-explain or expand it.
-2. Find the best place for this content. You are allowed to create new files and folders.
+2. Check whether a note on this topic already exists: search the vault for related terms, names, and concepts, and read every real candidate in full, a filename match is not enough. If one exists, integrate the content into the right section of that note instead of creating a duplicate, preserving the note's existing content and voice. If none fits, you are allowed to create a new file or folder.
 3. Insert under a heading for the concept, matching the style of notes already in that part of the vault.
-4. Pick whichever format makes the content easiest to scan — bullets for short standalone points, a markdown table for repeated rows of figures or comparisons, `###` sub-headings to split a long example into parts. Bullets are the default, not the rule.
+4. Fit the layout to the content type instead of forcing a fixed template:
+
+   | Content type | Layout |
+   |---|---|
+   | A concept / definition | Bold definition, then bullets, then examples |
+   | A process / how-to | Bold summary, then ordered steps |
+   | A comparison / options | Bold summary, then a table |
+   | A mix | Combine the above as the content demands |
+
+   Only include sections the content actually supports.
 5. Wrap every formula in backticks so it renders as inline code — `Density = Mass ÷ Volume`. This holds wherever the formula sits: on its own line, in a bullet, or inside a table cell.
 6. Add nothing the user did not provide — no new facts, no filler, no commentary. Restructuring what they sent is allowed; headings and table column labels count as structure, not as new content.
 7. Reply with a one-line confirmation and the wikilink.
@@ -47,3 +56,5 @@ Trigger: the user sends content, or says "add this" / "add to notes" — in this
 - Adding facts the user did not send in turn 2 → remove them.
 - Prose blocks where a list or table would read better → restructure.
 - Answering from memory without searching → search first.
+- Creating a new file without checking for an existing note on the topic → search and read every real candidate first, merge into it if one fits.
+- Forcing content into one fixed layout regardless of its type → match the layout to the content type instead.
