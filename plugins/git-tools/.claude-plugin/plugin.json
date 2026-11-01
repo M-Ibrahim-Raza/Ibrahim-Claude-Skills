@@ -1,9 +1,9 @@
 {
   "name": "git-tools",
-  "description": "Skills for git workflow tasks like writing commits and switching branches",
+  "description": "Skills for git workflow tasks like committing, pushing, switching, and cherry-picking branches, and opening PRs",
   "version": "0.1.0",
   "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
   "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/git-tools",
   "repository": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills",
-  "keywords": ["skills", "git", "commit"]
+  "keywords": ["skills", "git", "commit", "push", "pr"]
 }

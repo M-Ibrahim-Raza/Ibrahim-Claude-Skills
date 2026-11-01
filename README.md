@@ -95,6 +95,8 @@ Skills for git workflow tasks.
 | Skill | What it does |
 |---|---|
 | `/commit` | Writes and creates git commits following best practices — atomic, Conventional Commits, no AI attribution. |
+| `/push-branch` | Pushes the current branch to origin safely — refuses protected branches, sets upstream, stops on divergence, and force-pushes only with `--force-with-lease` when asked. |
+| `/open-pr` | Opens a GitHub PR for the current branch with `gh` — self-reviews the diff, drafts a clear title and description (using the repo's PR template if present), and confirms before creating. |
 | `/switch-branch` | Switches the current repo to a given branch (creating it if it does not exist), stashing and restoring any local changes, pulling the latest from origin. |
 | `/cherry-pick-branch` | Cherry-picks a QA'd feature branch's commits onto a fresh branch off the production branch, ready to open a PR from. |
 

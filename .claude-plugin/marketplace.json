@@ -37,7 +37,7 @@
     },
     {
       "name": "git-tools",
-      "description": "Skills for git workflow tasks like writing commits and switching branches",
+      "description": "Skills for git workflow tasks like committing, pushing, switching, and cherry-picking branches, and opening PRs",
       "version": "0.1.0",
       "source": "./plugins/git-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
