@@ -109,10 +109,11 @@ Skills for git workflow tasks.
 
 ### [`prompt-tools`](plugins/prompt-tools/)
 
-Skills for editing and maintaining LLM prompts without breaking their existing instructions.
+Skills for restructuring prompts for coding agents and editing existing prompts without breaking their instructions.
 
 | Skill | What it does |
 |---|---|
+| `/prompt-optimizer-for-code` | Rewrites a rough prompt into clean, structured markdown for a coding agent. Reorders and reformats only, never adds requirements or drops details. |
 | `/prompt-instruction-editor` | Adds, clarifies, or changes only the instructions a change request touches, leaves every other line untouched, and shows a diff to prove it. Flags conflicts with existing rules instead of quietly editing them. |
 
 #### Install
