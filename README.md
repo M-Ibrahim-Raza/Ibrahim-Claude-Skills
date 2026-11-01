@@ -122,6 +122,20 @@ Skills for restructuring prompts for coding agents and editing existing prompts 
 /plugin install prompt-tools@ibrahim-claude-skills
 ```
 
+### [`learning-tools`](plugins/learning-tools/)
+
+Skills for learning concepts with Claude as a tutor that finds where you're stuck and guides you to the answer instead of handing it over.
+
+| Skill | What it does |
+|---|---|
+| `/learn` | Tutors you through a concept. It first finds where you're stuck, then moves you forward one step per turn with hints, worked parallel examples, and quick checks, instead of handing over the answer. It makes flashcards, quizzes, and study guides when you ask for them. |
+
+#### Install
+
+```
+/plugin install learning-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.

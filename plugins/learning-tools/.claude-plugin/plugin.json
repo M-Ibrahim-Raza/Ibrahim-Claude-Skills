@@ -1,0 +1,9 @@
+{
+  "name": "learning-tools",
+  "description": "Skills for learning concepts with Claude as a tutor that finds where you're stuck and guides you to the answer instead of handing it over",
+  "version": "0.1.0",
+  "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+  "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/learning-tools",
+  "repository": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills",
+  "keywords": ["skills", "learning", "tutoring", "education"]
+}
