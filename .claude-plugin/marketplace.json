@@ -34,6 +34,14 @@
       "source": "./plugins/communication-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/communication-tools"
+    },
+    {
+      "name": "git-tools",
+      "description": "Skills for git workflow tasks like writing commits and switching branches",
+      "version": "0.1.0",
+      "source": "./plugins/git-tools",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/git-tools"
     }
   ]
 }
