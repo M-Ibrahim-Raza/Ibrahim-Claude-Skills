@@ -71,6 +71,23 @@ behavior.
 /plugin install obsidian-notes@ibrahim-claude-skills
 ```
 
+### [`communication-tools`](plugins/communication-tools/)
+
+Skills for writing, rewriting, and formatting messages in a clear, human voice.
+
+| Skill | What it does |
+|---|---|
+| `/write-naturally` | Rewrites or drafts content so it sounds simple, clear, and natural — not robotic or AI-generated. |
+| `/rewrite-for-slack` | Rewrites a message into a short, simple, casual Slack tone, then runs it through `/format-slack-message`. |
+| `/format-slack-message` | Formats a given message for Slack — bolds key terms, backticks code-like tokens, linkifies bare URLs — without changing a single word. |
+| `/format-clickup-message` | Formats a given message for ClickUp — bolds key terms and backticks code-like tokens and named message types — without changing a single word. |
+
+#### Install
+
+```
+/plugin install communication-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.

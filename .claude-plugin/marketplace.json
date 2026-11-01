@@ -26,6 +26,14 @@
       "source": "./plugins/obsidian-notes",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/obsidian-notes"
+    },
+    {
+      "name": "communication-tools",
+      "description": "Skills for writing, rewriting, and formatting messages in a clear, human voice",
+      "version": "0.1.0",
+      "source": "./plugins/communication-tools",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/communication-tools"
     }
   ]
 }
