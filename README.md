@@ -1,10 +1,26 @@
 # sdd-toolkit
 
-A Claude Code plugin for spec-driven development (SDD): a four-phase workflow that turns a feature
-idea into an approved spec, a technical plan, an ordered task list, and verified implementation —
-with a human checkpoint between each phase.
+A Claude Code plugin marketplace. Each plugin lives in its own folder under [`plugins/`](plugins/),
+with its own `.claude-plugin/plugin.json`, so more plugins can be added here over time without
+touching the ones already installed from this marketplace.
 
-## Workflow
+## Add this marketplace
+
+One-time step, then install any plugin listed below:
+
+```
+/plugin marketplace add M-Ibrahim-Raza/sdd-toolkit
+```
+
+## Plugins
+
+### [`sdd-toolkit`](plugins/sdd-toolkit/)
+
+A four-phase spec-driven development (SDD) workflow that turns a feature idea into an approved
+spec, a technical plan, an ordered task list, and verified implementation — with a human checkpoint
+between each phase.
+
+#### Workflow
 
 ```
 /sdd-specify  →  /sdd-plan  →  /sdd-tasks  →  /sdd-implement
@@ -20,10 +36,9 @@ with a human checkpoint between each phase.
 
 Each phase is slash-command-only (no automatic triggering), so it only runs when you ask for it.
 
-## Install
+#### Install
 
 ```
-/plugin marketplace add M-Ibrahim-Raza/sdd-toolkit
 /plugin install sdd-toolkit@sdd-toolkit
 ```
 
