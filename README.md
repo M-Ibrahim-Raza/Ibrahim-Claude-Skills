@@ -42,6 +42,18 @@ Each phase is slash-command-only (no automatic triggering), so it only runs when
 /plugin install sdd-toolkit@sdd-toolkit
 ```
 
+### [`update-app-docs`](plugins/update-app-docs/)
+
+Keeps a project's `docs/` folder in sync with what actually ships. Finds the docs a feature should
+update, proposes the exact edit, and waits for approval before writing anything. It edits docs
+only — it never changes code, opens tickets, or commits.
+
+#### Install
+
+```
+/plugin install update-app-docs@sdd-toolkit
+```
+
 ## License
 
 No explicit license is attached to this repository.

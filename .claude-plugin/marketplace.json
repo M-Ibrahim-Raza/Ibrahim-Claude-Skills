@@ -1,6 +1,6 @@
 {
   "name": "sdd-toolkit",
-  "description": "Spec-driven development workflow for Claude Code",
+  "description": "Claude Code plugin marketplace by M-Ibrahim-Raza",
   "owner": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
   "plugins": [
     {
@@ -10,6 +10,14 @@
       "source": "./plugins/sdd-toolkit",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/sdd-toolkit/tree/main/plugins/sdd-toolkit"
+    },
+    {
+      "name": "update-app-docs",
+      "description": "Keep your project's docs/ in sync with shipped features for Claude Code",
+      "version": "0.1.0",
+      "source": "./plugins/update-app-docs",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/sdd-toolkit/tree/main/plugins/update-app-docs"
     }
   ]
 }
