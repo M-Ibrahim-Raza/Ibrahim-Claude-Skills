@@ -12,7 +12,7 @@ One-time step, then install any plugin listed below:
 /plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
 ```
 
-New here? [GETTING-STARTED.md](GETTING-STARTED.md) covers scopes, shell installs, updating, and what each plugin needs first.
+New here? [SETUP.md](SETUP.md) covers scopes, shell installs, updating, and what each plugin needs first.
 
 ## Plugins
 
