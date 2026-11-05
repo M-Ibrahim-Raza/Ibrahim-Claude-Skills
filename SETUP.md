@@ -15,7 +15,7 @@ under the name `ibrahim-claude-skills`. It has eight plugins:
 | [`git-tools`](plugins/git-tools/) | Committing, pushing, switching branches, cherry-picking, and opening PRs | `/plugin install git-tools@ibrahim-claude-skills` |
 | [`prompt-tools`](plugins/prompt-tools/) | Restructuring prompts for coding agents and making scoped prompt edits | `/plugin install prompt-tools@ibrahim-claude-skills` |
 | [`learning-tools`](plugins/learning-tools/) | Learning a concept with a tutor that guides you instead of handing over answers | `/plugin install learning-tools@ibrahim-claude-skills` |
-| [`stack-tools`](plugins/stack-tools/) | Researching and choosing a library, framework, or service, and recording it in your tech stack file | `/plugin install stack-tools@ibrahim-claude-skills` |
+| [`stack-tools`](plugins/stack-tools/) | Mapping your app's tech stack into a file, and researching and choosing new tools to add to it | `/plugin install stack-tools@ibrahim-claude-skills` |
 
 Each plugin installs on its own. Install only the ones you need.
 
@@ -126,7 +126,7 @@ The [README](README.md) uses short names like `/commit`. Inside Claude Code the 
 
 Skills run in one of two ways:
 
-- **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, `learn`, and `tech-picker`.
+- **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, `learn`, `tech-stack-mapper`, and `tech-picker`.
 - **When you type the command, or when you ask in plain words.** Claude picks these up from requests like "commit this" or "open a PR": `commit`, `push-branch`, `open-pr`, `switch-branch`, `cherry-pick-branch`, `format-slack-message`, `format-clickup-message`, `prompt-optimizer-for-code`, `prompt-instruction-editor`, and `update-app-docs`.
 
 ## Plugin by plugin
@@ -309,13 +309,16 @@ claude plugin install learning-tools@ibrahim-claude-skills
 claude plugin install stack-tools@ibrahim-claude-skills
 ```
 
-**What you need first:** start Claude Code in your app's repository, with web search available. The skill reads your tech stack file (`tech_stack.md` or a close variant, at the repo root or under `docs/`) and your manifests, such as `package.json`. If it can't find a stack file, it asks where yours is or offers to create one.
+**What you need first:** start Claude Code in your app's repository. Both skills look for your tech stack file (`tech_stack.md` or a close variant, at the repo root or under `docs/`) and read your manifests, such as `package.json`. `tech-picker` also needs web search. If you don't have a stack file yet, run `tech-stack-mapper` first.
 
 | Skill | Input | Notes |
 |---|---|---|
+| `/stack-tools:tech-stack-mapper` | `[repo path] [stack file path]`, both optional | Lists only tools that are installed **and** used in code, config, or scripts, with exact lockfile versions. Unused dependencies go in its review notes, not the file. It writes `-` for any reason or date it can't find in the code or docs. It writes only after you accept the draft. |
 | `/stack-tools:tech-picker` | `[domain] [tools to compare] [stack file path]`, all optional | Compares 3–5 current options, or the tools you name plus 1–2 it adds, and recommends one. It writes to your stack file only after you choose, and it matches the file's existing format. |
 
 ```text
+/stack-tools:tech-stack-mapper
+/stack-tools:tech-stack-mapper apps/web docs/tech_stack.md
 /stack-tools:tech-picker state management
 /stack-tools:tech-picker auth clerk auth0 docs/tech_stack.md
 ```

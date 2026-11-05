@@ -140,10 +140,16 @@ Skills for learning concepts with Claude as a tutor that finds where you're stuc
 
 ### [`stack-tools`](plugins/stack-tools/)
 
-Skills for researching, comparing, and choosing tech tools for your app, and recording the decision in your tech stack file.
+Skills for mapping your app's tech stack into a stack file from what the code actually uses, and for researching, comparing, and choosing new tools to add to it.
+
+```
+/tech-stack-mapper  →  /tech-picker
+  tech_stack.md         a new tool, recorded in tech_stack.md
+```
 
 | Skill | What it does |
 |---|---|
+| `/tech-stack-mapper` | Scans your codebase (manifests, lockfiles, config, and imports) and builds a stack file grouped by domain. It lists only tools that are installed and actually used, with exact lockfile versions. It never guesses why a tool was chosen. It shows you the draft and writes the file only after you accept it. On an existing file, it adds missing tools and leaves your entries alone. |
 | `/tech-picker` | Picks a library, framework, or service for one need in your app. It reads your tech stack file and manifests, asks only the questions that change the answer, and researches current options on the web. Then it compares them in a table and recommends one. After you choose, it adds the tool to your stack file in the file's existing format. |
 
 #### Install
