@@ -4,7 +4,7 @@ This guide walks you from a fresh Claude Code install to running any plugin in t
 For what each skill does in detail, see the [README](README.md).
 
 The marketplace lives at `M-Ibrahim-Raza/Ibrahim-Claude-Skills` on GitHub and registers in Claude Code
-under the name `ibrahim-claude-skills`. It has seven plugins:
+under the name `ibrahim-claude-skills`. It has eight plugins:
 
 | Plugin | Use it for | Install (inside Claude Code) |
 |---|---|---|
@@ -15,6 +15,7 @@ under the name `ibrahim-claude-skills`. It has seven plugins:
 | [`git-tools`](plugins/git-tools/) | Committing, pushing, switching branches, cherry-picking, and opening PRs | `/plugin install git-tools@ibrahim-claude-skills` |
 | [`prompt-tools`](plugins/prompt-tools/) | Restructuring prompts for coding agents and making scoped prompt edits | `/plugin install prompt-tools@ibrahim-claude-skills` |
 | [`learning-tools`](plugins/learning-tools/) | Learning a concept with a tutor that guides you instead of handing over answers | `/plugin install learning-tools@ibrahim-claude-skills` |
+| [`stack-tools`](plugins/stack-tools/) | Researching and choosing a library, framework, or service, and recording it in your tech stack file | `/plugin install stack-tools@ibrahim-claude-skills` |
 
 Each plugin installs on its own. Install only the ones you need.
 
@@ -38,7 +39,7 @@ Or, from your shell without starting a session:
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
 ```
 
-Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The seven plugins now show up on the **Discover** tab of `/plugin`.
+Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The eight plugins now show up on the **Discover** tab of `/plugin`.
 
 ## Step 2: Install a plugin
 
@@ -72,11 +73,11 @@ claude plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skil
 
 The same works inside a session as `/plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skills`. Claude Code asks you to confirm the new marketplace first.
 
-### Install all seven
+### Install all eight
 
 ```bash
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
-for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools; do
+for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools; do
   claude plugin install "$p@ibrahim-claude-skills"
 done
 ```
@@ -125,7 +126,7 @@ The [README](README.md) uses short names like `/commit`. Inside Claude Code the 
 
 Skills run in one of two ways:
 
-- **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, and `learn`.
+- **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, `learn`, and `tech-picker`.
 - **When you type the command, or when you ask in plain words.** Claude picks these up from requests like "commit this" or "open a PR": `commit`, `push-branch`, `open-pr`, `switch-branch`, `cherry-pick-branch`, `format-slack-message`, `format-clickup-message`, `prompt-optimizer-for-code`, `prompt-instruction-editor`, and `update-app-docs`.
 
 ## Plugin by plugin
@@ -296,6 +297,27 @@ claude plugin install learning-tools@ibrahim-claude-skills
 ```text
 /learning-tools:learn Galois theory
 /learning-tools:learn quiz me on TCP vs UDP
+```
+
+### `stack-tools`
+
+```text
+/plugin install stack-tools@ibrahim-claude-skills
+```
+
+```bash
+claude plugin install stack-tools@ibrahim-claude-skills
+```
+
+**What you need first:** start Claude Code in your app's repository, with web search available. The skill reads your tech stack file (`tech_stack.md` or a close variant, at the repo root or under `docs/`) and your manifests, such as `package.json`. If it can't find a stack file, it asks where yours is or offers to create one.
+
+| Skill | Input | Notes |
+|---|---|---|
+| `/stack-tools:tech-picker` | `[domain] [tools to compare] [stack file path]`, all optional | Compares 3–5 current options, or the tools you name plus 1–2 it adds, and recommends one. It writes to your stack file only after you choose, and it matches the file's existing format. |
+
+```text
+/stack-tools:tech-picker state management
+/stack-tools:tech-picker auth clerk auth0 docs/tech_stack.md
 ```
 
 ## Keep plugins updated

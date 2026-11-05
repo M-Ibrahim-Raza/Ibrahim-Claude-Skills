@@ -138,6 +138,20 @@ Skills for learning concepts with Claude as a tutor that finds where you're stuc
 /plugin install learning-tools@ibrahim-claude-skills
 ```
 
+### [`stack-tools`](plugins/stack-tools/)
+
+Skills for researching, comparing, and choosing tech tools for your app, and recording the decision in your tech stack file.
+
+| Skill | What it does |
+|---|---|
+| `/tech-picker` | Picks a library, framework, or service for one need in your app. It reads your tech stack file and manifests, asks only the questions that change the answer, and researches current options on the web. Then it compares them in a table and recommends one. After you choose, it adds the tool to your stack file in the file's existing format. |
+
+#### Install
+
+```
+/plugin install stack-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.

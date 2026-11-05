@@ -1,0 +1,9 @@
+{
+  "name": "stack-tools",
+  "description": "Skills for researching, comparing, and choosing tech tools for your app, and recording the decision in your tech stack file",
+  "version": "0.1.0",
+  "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+  "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/stack-tools",
+  "repository": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills",
+  "keywords": ["skills", "tech-stack", "research", "libraries", "decision-making"]
+}
