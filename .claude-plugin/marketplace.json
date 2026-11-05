@@ -66,6 +66,14 @@
       "source": "./plugins/stack-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/stack-tools"
+    },
+    {
+      "name": "claude-notify-tools",
+      "description": "Skills that set up and toggle Claude Code notification hooks (desktop, soft sound, ntfy phone push) so you know the moment Claude finishes or needs you",
+      "version": "0.1.0",
+      "source": "./plugins/claude-notify-tools",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/claude-notify-tools"
     }
   ]
 }

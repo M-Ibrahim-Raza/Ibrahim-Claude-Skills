@@ -4,7 +4,7 @@ This guide walks you from a fresh Claude Code install to running any plugin in t
 For what each skill does in detail, see the [README](README.md).
 
 The marketplace lives at `M-Ibrahim-Raza/Ibrahim-Claude-Skills` on GitHub and registers in Claude Code
-under the name `ibrahim-claude-skills`. It has eight plugins:
+under the name `ibrahim-claude-skills`. It has nine plugins:
 
 | Plugin | Use it for | Install (inside Claude Code) |
 |---|---|---|
@@ -16,6 +16,7 @@ under the name `ibrahim-claude-skills`. It has eight plugins:
 | [`prompt-tools`](plugins/prompt-tools/) | Restructuring prompts for coding agents and making scoped prompt edits | `/plugin install prompt-tools@ibrahim-claude-skills` |
 | [`learning-tools`](plugins/learning-tools/) | Learning a concept with a tutor that guides you instead of handing over answers | `/plugin install learning-tools@ibrahim-claude-skills` |
 | [`stack-tools`](plugins/stack-tools/) | Mapping your app's tech stack into a file, and researching and choosing new tools to add to it | `/plugin install stack-tools@ibrahim-claude-skills` |
+| [`claude-notify-tools`](plugins/claude-notify-tools/) | Getting a desktop alert, soft sound, or phone push when Claude finishes or needs you | `/plugin install claude-notify-tools@ibrahim-claude-skills` |
 
 Each plugin installs on its own. Install only the ones you need.
 
@@ -39,7 +40,7 @@ Or, from your shell without starting a session:
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
 ```
 
-Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The eight plugins now show up on the **Discover** tab of `/plugin`.
+Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The nine plugins now show up on the **Discover** tab of `/plugin`.
 
 ## Step 2: Install a plugin
 
@@ -73,11 +74,11 @@ claude plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skil
 
 The same works inside a session as `/plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skills`. Claude Code asks you to confirm the new marketplace first.
 
-### Install all eight
+### Install all nine
 
 ```bash
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
-for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools; do
+for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools claude-notify-tools; do
   claude plugin install "$p@ibrahim-claude-skills"
 done
 ```
@@ -321,6 +322,37 @@ claude plugin install stack-tools@ibrahim-claude-skills
 /stack-tools:tech-stack-mapper apps/web docs/tech_stack.md
 /stack-tools:tech-picker state management
 /stack-tools:tech-picker auth clerk auth0 docs/tech_stack.md
+```
+
+### `claude-notify-tools`
+
+```text
+/plugin install claude-notify-tools@ibrahim-claude-skills
+```
+
+```bash
+claude plugin install claude-notify-tools@ibrahim-claude-skills
+```
+
+**What you need first:** start Claude Code in the project you want alerts for. Install the plugin at user scope so you can run the setup skill in any project; the skill itself decides whether the hook is project-only or global.
+
+Requirements per OS:
+- **macOS** needs nothing extra.
+- **Linux** needs `notify-send` (libnotify) and one of `pw-play`, `paplay`, or `aplay`.
+- **Windows** uses the built-in `powershell.exe`.
+- **WSL** also needs `powershell.exe` on PATH.
+- **Phone alerts** need the free ntfy app.
+
+| Skill | Input | Notes |
+|---|---|---|
+| `/claude-notify-tools:setup-notifications` | `[user\|project] [uninstall]`, optional | Asks which channels, events, and noise filters you want, copies the hook script into `.claude/hooks/claude-notify/`, merges the hooks into `.claude/settings.local.json` (or `~/.claude/settings.json` for user scope), then sends test alerts and asks you to confirm they arrived. Re-running it reconfigures without duplicating hooks. |
+| `/claude-notify-tools:notify-toggle` | `on`, `off`, `status`, `mute <channel>`, `unmute <channel>`, `event <name> on\|off`, or `test` | Edits only `notify.conf`, so a change applies to the next alert without a restart. `CLAUDE_NOTIFY=0` mutes every alert for one shell. |
+
+```text
+/claude-notify-tools:setup-notifications
+/claude-notify-tools:setup-notifications user
+/claude-notify-tools:notify-toggle mute sound
+/claude-notify-tools:notify-toggle off
 ```
 
 ## Keep plugins updated

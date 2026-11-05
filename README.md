@@ -158,6 +158,26 @@ Skills for mapping your app's tech stack into a stack file from what the code ac
 /plugin install stack-tools@ibrahim-claude-skills
 ```
 
+### [`claude-notify-tools`](plugins/claude-notify-tools/)
+
+Skills that make Claude tell you when it finishes or needs you, so a session never sits waiting unnoticed. Alerts can be a desktop notification, a soft chime, or a phone push via ntfy.sh. They work on macOS, Linux, WSL, and Windows.
+
+```
+/setup-notifications  →  hook installed (project by default, or user level)
+/notify-toggle        →  on / off / mute a channel / status / test
+```
+
+| Skill | What it does |
+|---|---|
+| `/setup-notifications` | Asks which channels you want (desktop, sound, phone), which moments to alert on (needs permission, asked a question, finished, error, idle reminder), and how to cut noise (skip when your terminal is focused, phone only for turns longer than 2 minutes, quiet hours). Then it installs a dependency-free hook script for your OS, merges the hooks into your settings without touching anything else, sends test alerts, and confirms with you that they arrived. |
+| `/notify-toggle` | Turns alerts on or off, mutes or unmutes a single channel, switches individual events on or off, shows status, or sends a test alert. It edits only the config file, so changes apply immediately. |
+
+#### Install
+
+```
+/plugin install claude-notify-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.
