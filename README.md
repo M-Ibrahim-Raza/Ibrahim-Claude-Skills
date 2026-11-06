@@ -181,17 +181,19 @@ Skills that make Claude tell you when it finishes or needs you, so a session nev
 
 ### [`code-quality-tools`](plugins/code-quality-tools/)
 
-Skills that make code easier for humans and AI agents to read: doc comments, type annotations, and naming for TypeScript + Next.js (React, tRPC, TanStack Query) and Python + Pydantic codebases.
+Skills that make code easier for humans and AI agents to read: doc comments, type annotations, naming, and structured Pino logging for TypeScript + Next.js (React, tRPC, TanStack Query) and Python + Pydantic codebases.
 
 ```
 /ts-docs-types-naming <files | folders | feature>  →  edits in place + short change list
 /py-docs-types-naming <files | folders | feature>  →  edits in place + short change list
+/ts-pino-logging      <files | folders | feature>  →  edits in place + short change list
 ```
 
 | Skill | What it does |
 |---|---|
 | `/ts-docs-types-naming` | Manual only. Applies one consistent set of rules for doc comments (TSDoc), type annotations, and naming to the files you give it. If you give no scope, it proposes the files changed in the chat and asks you to confirm. It adds TSDoc only where the name and signature leave questions, and keeps comments plain, with no outside links. It annotates exported boundaries but leaves tRPC and TanStack Query types to inference. It renames vague or misnamed identifiers and updates every caller. It never changes runtime behavior, and your repo's own lint rules and CLAUDE.md take precedence. The rules and fixed formats for the repeating structures fit in 50 lines. |
 | `/py-docs-types-naming` | Manual only. The Python + Pydantic version. It gives every public module, class, function and method a Google-style docstring (or keeps your repo's existing style), with no outside links or ticket IDs. It annotates every parameter and return type using the newest syntax your `requires-python` allows. It documents Pydantic fields with attribute docstrings and moves constraints into `Annotated` types. It applies PEP 8 names and updates every caller, but never renames DB columns, env vars, JSON fields, routes or CLI flags. It never changes runtime or validation behavior: v1 APIs, missing `extra="forbid"` and untagged unions are reported, not fixed. Fits in 60 lines. |
+| `/ts-pino-logging` | Manual only. Applies one set of Pino structured-logging rules to the server code you give it, so developers and AI agents can trace what happened from the logs. If you give no scope, it proposes the files changed in the chat and asks you to confirm. Messages are short, constant past-tense events (`Order created`), and all variable data goes in camelCase fields. Each module gets a child logger, and each request gets one with `requestId`. Errors are logged once, where they are handled, as `{ err }`. It sets clear rules for each level, keeps secrets, payment data and personal data out of logs and checks that `redact` covers them, and keeps Pino out of client and Edge code. It rewrites existing logs, replaces server `console.*`, and adds logs only at error boundaries, external calls and state changes. Your repo's logger config and CLAUDE.md take precedence, and if there is no logger it proposes one and asks first. Fits in 50 lines. |
 
 #### Install
 
