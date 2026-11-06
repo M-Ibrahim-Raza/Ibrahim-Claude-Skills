@@ -181,15 +181,17 @@ Skills that make Claude tell you when it finishes or needs you, so a session nev
 
 ### [`code-quality-tools`](plugins/code-quality-tools/)
 
-Skills that make code easier for humans and AI agents to read, starting with doc comments, type annotations, and naming for TypeScript + Next.js (React, tRPC, TanStack Query) codebases.
+Skills that make code easier for humans and AI agents to read: doc comments, type annotations, and naming for TypeScript + Next.js (React, tRPC, TanStack Query) and Python + Pydantic codebases.
 
 ```
 /ts-docs-types-naming <files | folders | feature>  →  edits in place + short change list
+/py-docs-types-naming <files | folders | feature>  →  edits in place + short change list
 ```
 
 | Skill | What it does |
 |---|---|
 | `/ts-docs-types-naming` | Manual only. Applies one consistent set of rules for doc comments (TSDoc), type annotations, and naming to the files you give it. If you give no scope, it proposes the files changed in the chat and asks you to confirm. It adds TSDoc only where the name and signature leave questions, and keeps comments plain, with no outside links. It annotates exported boundaries but leaves tRPC and TanStack Query types to inference. It renames vague or misnamed identifiers and updates every caller. It never changes runtime behavior, and your repo's own lint rules and CLAUDE.md take precedence. The rules and fixed formats for the repeating structures fit in 50 lines. |
+| `/py-docs-types-naming` | Manual only. The Python + Pydantic version. It gives every public module, class, function and method a Google-style docstring (or keeps your repo's existing style), with no outside links or ticket IDs. It annotates every parameter and return type using the newest syntax your `requires-python` allows. It documents Pydantic fields with attribute docstrings and moves constraints into `Annotated` types. It applies PEP 8 names and updates every caller, but never renames DB columns, env vars, JSON fields, routes or CLI flags. It never changes runtime or validation behavior: v1 APIs, missing `extra="forbid"` and untagged unions are reported, not fixed. Fits in 60 lines. |
 
 #### Install
 
