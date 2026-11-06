@@ -74,6 +74,14 @@
       "source": "./plugins/claude-notify-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/claude-notify-tools"
+    },
+    {
+      "name": "code-quality-tools",
+      "description": "Skills that make code easier for humans and AI agents to read, starting with doc comments, type annotations, and naming for TypeScript + Next.js codebases",
+      "version": "0.1.0",
+      "source": "./plugins/code-quality-tools",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/code-quality-tools"
     }
   ]
 }

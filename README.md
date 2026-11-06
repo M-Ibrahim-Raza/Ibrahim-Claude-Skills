@@ -179,6 +179,24 @@ Skills that make Claude tell you when it finishes or needs you, so a session nev
 /plugin install claude-notify-tools@ibrahim-claude-skills
 ```
 
+### [`code-quality-tools`](plugins/code-quality-tools/)
+
+Skills that make code easier for humans and AI agents to read, starting with doc comments, type annotations, and naming for TypeScript + Next.js (React, tRPC, TanStack Query) codebases.
+
+```
+/ts-docs-types-naming <files | folders | feature>  →  edits in place + short change list
+```
+
+| Skill | What it does |
+|---|---|
+| `/ts-docs-types-naming` | Manual only. Applies one consistent set of rules for doc comments (TSDoc), type annotations, and naming to the files you give it. If you give no scope, it proposes the files changed in the chat and asks you to confirm. It adds TSDoc only where the name and signature leave questions, and keeps comments plain, with no outside links. It annotates exported boundaries but leaves tRPC and TanStack Query types to inference. It renames vague or misnamed identifiers and updates every caller. It never changes runtime behavior, and your repo's own lint rules and CLAUDE.md take precedence. The rules and fixed formats for the repeating structures fit in 50 lines. |
+
+#### Install
+
+```
+/plugin install code-quality-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.
