@@ -1,9 +1,9 @@
 {
   "name": "code-quality-tools",
-  "description": "Skills that make code easier for humans and AI agents to read: doc comments, type annotations, naming, and structured Pino logging for TypeScript + Next.js and Python + Pydantic codebases",
-  "version": "0.3.0",
+  "description": "Skills that make code easier for humans and AI agents to read: doc comments, type annotations, naming, and structured Pino and Loguru logging for TypeScript + Next.js and Python + Pydantic + FastAPI codebases",
+  "version": "0.4.0",
   "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
   "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/code-quality-tools",
   "repository": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills",
-  "keywords": ["skills", "typescript", "nextjs", "react", "trpc", "tanstack-query", "tsdoc", "naming-conventions", "code-quality", "python", "pydantic", "pep8", "type-hints", "docstrings", "pino", "logging", "structured-logging", "observability"]
+  "keywords": ["skills", "typescript", "nextjs", "react", "trpc", "tanstack-query", "tsdoc", "naming-conventions", "code-quality", "python", "pydantic", "pep8", "type-hints", "docstrings", "pino", "logging", "structured-logging", "observability", "loguru", "fastapi"]
 }
