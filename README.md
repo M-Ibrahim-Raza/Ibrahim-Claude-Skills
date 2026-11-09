@@ -201,6 +201,28 @@ Skills that make code easier for humans and AI agents to read: doc comments, typ
 /plugin install code-quality-tools@ibrahim-claude-skills
 ```
 
+### [`project-docs-tools`](plugins/project-docs-tools/)
+
+Skills for recording architecture decisions as ADRs and turning rough ideas into user journey files. Each one follows your project's own doc rules when it has them, copies your existing files when it doesn't, and falls back to a compact default format in a new repo.
+
+```
+/new-adr     [decision]      →  docs/adr/NNNN-short-title.md (+ old ADR marked superseded)
+/new-journey [journey idea]  →  docs/journeys/J<n>-short-name.md (+ index and product doc lines)
+```
+
+| Skill | What it does |
+|---|---|
+| `/new-adr` | Records a decision as an ADR. It finds your ADR folder and its rules (a section in `docs/README.md`, a template, or your existing ADRs), checks the decision is worth an ADR, and asks for any missing reasons instead of inventing them: why decide now, the options compared, why each one won or lost, and what it costs. When the decision replaces an old one, it confirms what still holds, marks the old ADR superseded without changing its decision, and fixes references to it. With no rules or ADRs yet, it writes a 200-word ADR with bold Context, Decision and Consequences. It shows the full draft and writes only after you say yes. |
+| `/new-journey` | Turns a rough idea into a user journey file: a persona, a goal, and a table of steps with the screen each one happens on. It stops if the idea repeats an existing journey, is a non-goal, or needs a persona your product doc doesn't have, and asks for any missing goal or step instead of guessing. It reuses screen names from your other journeys and never reuses an ID. After you approve the draft, it writes the file and adds its line to the journeys index and your product doc's journey list. With no rules yet, journeys stay under 20 lines. |
+
+Both skills also start when you ask in plain words, e.g. "we decided to drop GraphQL for tRPC" or "add a flow where users export a report".
+
+#### Install
+
+```
+/plugin install project-docs-tools@ibrahim-claude-skills
+```
+
 ## License
 
 No explicit license is attached to this repository.

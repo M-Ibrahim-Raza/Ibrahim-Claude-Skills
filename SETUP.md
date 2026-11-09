@@ -4,7 +4,7 @@ This guide walks you from a fresh Claude Code install to running any plugin in t
 For what each skill does in detail, see the [README](README.md).
 
 The marketplace lives at `M-Ibrahim-Raza/Ibrahim-Claude-Skills` on GitHub and registers in Claude Code
-under the name `ibrahim-claude-skills`. It has ten plugins:
+under the name `ibrahim-claude-skills`. It has eleven plugins:
 
 | Plugin | Use it for | Install (inside Claude Code) |
 |---|---|---|
@@ -18,6 +18,7 @@ under the name `ibrahim-claude-skills`. It has ten plugins:
 | [`stack-tools`](plugins/stack-tools/) | Mapping your app's tech stack into a file, and researching and choosing new tools to add to it | `/plugin install stack-tools@ibrahim-claude-skills` |
 | [`claude-notify-tools`](plugins/claude-notify-tools/) | Getting a desktop alert, soft sound, or phone push when Claude finishes or needs you | `/plugin install claude-notify-tools@ibrahim-claude-skills` |
 | [`code-quality-tools`](plugins/code-quality-tools/) | Doc comments, type annotations, naming, and structured logging for TypeScript and Python code | `/plugin install code-quality-tools@ibrahim-claude-skills` |
+| [`project-docs-tools`](plugins/project-docs-tools/) | Recording architecture decisions as ADRs and turning ideas into user journey files | `/plugin install project-docs-tools@ibrahim-claude-skills` |
 
 Each plugin installs on its own. Install only the ones you need.
 
@@ -41,7 +42,7 @@ Or, from your shell without starting a session:
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
 ```
 
-Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The ten plugins now show up on the **Discover** tab of `/plugin`.
+Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The eleven plugins now show up on the **Discover** tab of `/plugin`.
 
 ## Step 2: Install a plugin
 
@@ -75,11 +76,11 @@ claude plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skil
 
 The same works inside a session as `/plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skills`. Claude Code asks you to confirm the new marketplace first.
 
-### Install all ten
+### Install all eleven
 
 ```bash
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
-for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools claude-notify-tools code-quality-tools; do
+for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools claude-notify-tools code-quality-tools project-docs-tools; do
   claude plugin install "$p@ibrahim-claude-skills"
 done
 ```
@@ -129,7 +130,7 @@ The [README](README.md) uses short names like `/commit`. Inside Claude Code the 
 Skills run in one of two ways:
 
 - **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, `learn`, `tech-stack-mapper`, `tech-picker`, `ts-docs-types-naming`, `py-docs-types-naming`, and `ts-pino-logging`.
-- **When you type the command, or when you ask in plain words.** Claude picks these up from requests like "commit this" or "open a PR": `commit`, `push-branch`, `open-pr`, `switch-branch`, `cherry-pick-branch`, `format-slack-message`, `format-clickup-message`, `prompt-optimizer-for-code`, `prompt-instruction-editor`, and `update-app-docs`.
+- **When you type the command, or when you ask in plain words.** Claude picks these up from requests like "commit this" or "open a PR": `commit`, `push-branch`, `open-pr`, `switch-branch`, `cherry-pick-branch`, `format-slack-message`, `format-clickup-message`, `prompt-optimizer-for-code`, `prompt-instruction-editor`, `update-app-docs`, `new-adr`, and `new-journey`.
 
 ## Plugin by plugin
 
@@ -354,6 +355,30 @@ Requirements per OS:
 /claude-notify-tools:setup-notifications user
 /claude-notify-tools:notify-toggle mute sound
 /claude-notify-tools:notify-toggle off
+```
+
+### `project-docs-tools`
+
+```text
+/plugin install project-docs-tools@ibrahim-claude-skills
+```
+
+```bash
+claude plugin install project-docs-tools@ibrahim-claude-skills
+```
+
+**What you need first:** start Claude Code in your app's repository. Nothing else is required. If your project states rules for ADRs or journeys (for example a section in `docs/README.md`, or a template in the ADR folder), the skills follow them. If not, they copy your existing files. In a new repo they use a compact default format and ask before creating `docs/adr/` or `docs/journeys/`.
+
+| Skill | Input | Writes |
+|---|---|---|
+| `/project-docs-tools:new-adr` | `[decision]` | A numbered ADR in your ADR folder, plus the old ADR's status line when the new one replaces it |
+| `/project-docs-tools:new-journey` | `[journey idea]` | A journey file in your journeys folder, plus its line in the journeys index and your product doc's journey list |
+
+Both skills ask about anything missing instead of guessing, show you the full draft, and write only after you say yes. ADR numbers and journey IDs are never reused.
+
+```text
+/project-docs-tools:new-adr Use tRPC instead of REST for client data
+/project-docs-tools:new-journey Users export a monthly report as CSV
 ```
 
 ## Keep plugins updated

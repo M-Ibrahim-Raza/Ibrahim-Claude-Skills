@@ -82,6 +82,14 @@
       "source": "./plugins/code-quality-tools",
       "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
       "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/code-quality-tools"
+    },
+    {
+      "name": "project-docs-tools",
+      "description": "Skills for recording architecture decisions as ADRs and turning rough ideas into user journey files, following each project's own doc rules or compact defaults",
+      "version": "0.1.0",
+      "source": "./plugins/project-docs-tools",
+      "author": { "name": "M-Ibrahim-Raza", "email": "m.ibrahim.raza.dev@gmail.com" },
+      "homepage": "https://github.com/M-Ibrahim-Raza/Ibrahim-Claude-Skills/tree/main/plugins/project-docs-tools"
     }
   ]
 }
