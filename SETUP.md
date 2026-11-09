@@ -4,7 +4,7 @@ This guide walks you from a fresh Claude Code install to running any plugin in t
 For what each skill does in detail, see the [README](README.md).
 
 The marketplace lives at `M-Ibrahim-Raza/Ibrahim-Claude-Skills` on GitHub and registers in Claude Code
-under the name `ibrahim-claude-skills`. It has nine plugins:
+under the name `ibrahim-claude-skills`. It has ten plugins:
 
 | Plugin | Use it for | Install (inside Claude Code) |
 |---|---|---|
@@ -17,6 +17,7 @@ under the name `ibrahim-claude-skills`. It has nine plugins:
 | [`learning-tools`](plugins/learning-tools/) | Learning a concept with a tutor that guides you instead of handing over answers | `/plugin install learning-tools@ibrahim-claude-skills` |
 | [`stack-tools`](plugins/stack-tools/) | Mapping your app's tech stack into a file, and researching and choosing new tools to add to it | `/plugin install stack-tools@ibrahim-claude-skills` |
 | [`claude-notify-tools`](plugins/claude-notify-tools/) | Getting a desktop alert, soft sound, or phone push when Claude finishes or needs you | `/plugin install claude-notify-tools@ibrahim-claude-skills` |
+| [`code-quality-tools`](plugins/code-quality-tools/) | Doc comments, type annotations, naming, and structured logging for TypeScript and Python code | `/plugin install code-quality-tools@ibrahim-claude-skills` |
 
 Each plugin installs on its own. Install only the ones you need.
 
@@ -40,7 +41,7 @@ Or, from your shell without starting a session:
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
 ```
 
-Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The nine plugins now show up on the **Discover** tab of `/plugin`.
+Either way, you should see `Successfully added marketplace: ibrahim-claude-skills`. The ten plugins now show up on the **Discover** tab of `/plugin`.
 
 ## Step 2: Install a plugin
 
@@ -74,11 +75,11 @@ claude plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skil
 
 The same works inside a session as `/plugin install git-tools --marketplace M-Ibrahim-Raza/Ibrahim-Claude-Skills`. Claude Code asks you to confirm the new marketplace first.
 
-### Install all nine
+### Install all ten
 
 ```bash
 claude plugin marketplace add M-Ibrahim-Raza/Ibrahim-Claude-Skills
-for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools claude-notify-tools; do
+for p in sdd-toolkit update-app-docs obsidian-notes communication-tools git-tools prompt-tools learning-tools stack-tools claude-notify-tools code-quality-tools; do
   claude plugin install "$p@ibrahim-claude-skills"
 done
 ```
@@ -127,7 +128,7 @@ The [README](README.md) uses short names like `/commit`. Inside Claude Code the 
 
 Skills run in one of two ways:
 
-- **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, `learn`, `tech-stack-mapper`, and `tech-picker`.
+- **Only when you type the command.** Claude never starts these on its own: `sdd-specify`, `sdd-plan`, `sdd-tasks`, `sdd-implement`, `write-naturally`, `rewrite-for-slack`, `message-clarity-coach`, `add-diagram`, `place-content`, `search-and-add-concept`, `learn`, `tech-stack-mapper`, `tech-picker`, `ts-docs-types-naming`, `py-docs-types-naming`, and `ts-pino-logging`.
 - **When you type the command, or when you ask in plain words.** Claude picks these up from requests like "commit this" or "open a PR": `commit`, `push-branch`, `open-pr`, `switch-branch`, `cherry-pick-branch`, `format-slack-message`, `format-clickup-message`, `prompt-optimizer-for-code`, `prompt-instruction-editor`, and `update-app-docs`.
 
 ## Plugin by plugin
