@@ -1,7 +1,7 @@
 ---
 name: sdd-plan
 description: Runs the Plan phase of spec-driven development (SDD) — reads an approved spec.md, explores the codebase, decides how the feature will be built, asks about every technical decision the spec doesn't cover with AskUserQuestion instead of assuming, and writes a plan.md that feeds the Tasks phase. Use when the user says "/sdd-plan", "plan phase", "write the plan", "create plan.md", or wants to plan a spec produced by /sdd-specify.
-argument-hint: "[path to spec.md or feature folder]"
+argument-hint: "[path to spec.md or feature folder] [optional: agents or skills for context]"
 disable-model-invocation: true
 ---
 
@@ -28,6 +28,7 @@ Plan phase is the second phase of SDD. It turns an approved spec.md into a techn
 ## Explore Before Planning
 
 - Read the code the spec touches before deciding anything. Use Explore subagents for wide searches
+- If I give other agents or skills along with this one, run them during this phase to gather context on tools, skills, best practices and implementation, and use what they provide as input for the plan; spec.md still decides what to build, and this skill still decides plan.md's sections, format, location and approval step
 - If the app has no code yet for this area, say so and base decisions on `best_practices/`
 - Find existing patterns to reuse: similar features, helpers, test setup, naming
 - Record what you found as evidence (file paths and line numbers), not as memory

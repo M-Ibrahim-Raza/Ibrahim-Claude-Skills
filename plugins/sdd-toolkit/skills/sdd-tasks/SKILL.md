@@ -1,7 +1,7 @@
 ---
 name: sdd-tasks
 description: Runs the Tasks phase of spec-driven development (SDD) — reads an approved spec.md and plan.md, breaks the plan into small, ordered, verifiable tasks with dependencies, AC links and done checks, asks about every gap with AskUserQuestion instead of assuming, and writes a tasks.md that feeds the Implement phase. Use when the user says "/sdd-tasks", "tasks phase", "break the plan into tasks", or "create tasks.md".
-argument-hint: "[path to plan.md or feature folder]"
+argument-hint: "[path to plan.md or feature folder] [optional: agents or skills for context]"
 disable-model-invocation: true
 ---
 
@@ -33,6 +33,7 @@ Tasks phase is the third phase of SDD. It breaks an approved plan.md into an ord
 ## Task Writing Instructions
 
 - Tasks come only from plan.md. Don't add work the plan doesn't have, and don't make new technical decisions
+- If I give other agents or skills along with this one, run them during this phase to gather context on tools, skills, best practices and implementation (e.g. exact commands, test setup), and use it to write clearer tasks; they don't add work or technical decisions that plan.md doesn't have, and this skill still decides tasks.md's format, location and approval step
 - Every task must trace to at least one plan step and one acceptance criterion in spec.md. A task with no AC may be out of scope; ask me
 - Each task is **atomic**: one concern, about one commit's worth of work, and it touches only the files it lists
 - Each task is **self-contained**: a fresh subagent can do it from tasks.md, plan.md and spec.md without guessing what other tasks do

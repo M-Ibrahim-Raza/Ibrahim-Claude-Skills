@@ -1,7 +1,7 @@
 ---
 name: sdd-implement
 description: Runs the Implement phase of spec-driven development (SDD) — reads approved spec.md, plan.md and tasks.md in a fresh session, runs each task with a fresh implementer subagent, reviews each task with a reviewer subagent, runs [P] tasks in parallel, tracks progress in tasks.md, and stops only when it truly needs the user. Use when the user says "/sdd-implement", "implement phase", "run the tasks", or "implement tasks.md".
-argument-hint: "[path to tasks.md or feature folder]"
+argument-hint: "[path to tasks.md or feature folder] [optional: agents or skills for context]"
 disable-model-invocation: true
 ---
 
@@ -35,6 +35,7 @@ Read [references/execution-loop.md](references/execution-loop.md) before the fir
 - Brief every implementer with [references/implementer-brief.md](references/implementer-brief.md)
 - Brief every reviewer with [references/reviewer-brief.md](references/reviewer-brief.md)
 - Build each brief from the files. Never pass this session's history to a subagent
+- If I give other agents or skills along with this one, use them for context on tools, skills, best practices and implementation: name the skills that fit a task in its implementer and reviewer briefs so the subagent loads them, and use a given agent as the implementer or reviewer subagent where it fits, briefed the same way. spec.md, plan.md, tasks.md and the Rules below still win on any conflict
 
 ## Rules
 
